@@ -1,6 +1,6 @@
 # Flask Start Kit
 
-A flask start kit with flask_restful and mysql
+A flask start kit with [flask_restful](https://github.com/flask-restful/flask-restful) and mysql
 
 #### Initial a virtualenv
 
@@ -26,3 +26,8 @@ $ python main.py
 Use your browser to: [http://localhost:5000/todos](http://localhost:5000/todos)
 
 Congratulations! Enjoy your journey!
+
+### Other Resources
+
+- [Flask](http://flask.pocoo.org/)
+- [Flask Restful](https://github.com/flask-restful/flask-restful)
