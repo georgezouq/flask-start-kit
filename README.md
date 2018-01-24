@@ -1,0 +1,28 @@
+# Flask Start Kit
+
+A flask start kit with flask_restful and mysql
+
+#### Initial a virtualenv
+
+```
+$ pip install virtualenv
+$ virtualenv -p python3 env
+$ source env/bin/activate
+```
+
+#### Install dependence
+
+```
+$ git clone https://github.com/georgezouq/flask-start-kit.git
+$ pip install -r requirements.txt
+```
+
+#### Run main file
+
+```
+$ python main.py
+```
+
+Use your browser to: [http://localhost:5000/todos](http://localhost:5000/todos)
+
+Congratulations! Enjoy your journey!
