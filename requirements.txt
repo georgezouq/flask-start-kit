@@ -10,3 +10,10 @@ MarkupSafe==1.0
 pytz==2017.3
 six==1.11.0
 Werkzeug==0.14.1
+
+flask-migrate
+flask-sqlalchemy
+flask-marshmallow
+flask-jwt-extended
+marshmallow-sqlalchemy
+passlib
