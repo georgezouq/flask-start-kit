@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from resources.todo import todo_blueprint
+from resources import user, todo, auth
 from extensions import db, jwt
 
 
@@ -17,4 +17,6 @@ def configure_extensions(app):
 
 
 def register_blueprints(app):
-    app.register_blueprint(todo_blueprint, url_prefix='/todo')
+    app.register_blueprint(todo.blueprint, url_prefix='/todo')
+    app.register_blueprint(user.blueprint, url_prefix='/user')
+    app.register_blueprint(auth.blueprint, url_prefix='/auth')
