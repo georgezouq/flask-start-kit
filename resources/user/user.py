@@ -1,5 +1,5 @@
 from extensions import ma, db
-from model.user import User
+from models.user import User
 from flask import request
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required

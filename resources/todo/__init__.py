@@ -4,7 +4,7 @@ from .Todo import Todos
 from .TodoList import TodoList
 
 blueprint = Blueprint('todo', __name__)
-api = Api(todo_blueprint)
+api = Api(blueprint)
 
-api.add_resource(TodoList, '/todos')
+api.add_resource(TodoList, '/')
 api.add_resource(Todos, '/<string:todo_id>')
