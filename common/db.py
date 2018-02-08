@@ -2,16 +2,16 @@ from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from .config import config
+from .config import db_config
 from models import Base_Model
 
 engine = create_engine(
     'mysql+pymysql://' +
-    config['mysql_user'] + ':' +
-    config['mysql_pwd'] + '@' +
-    config['mysql_host'] + ':' +
-    config['mysql_port'] + '/' +
-    config['mysql_db'])
+    db_config['mysql_user'] + ':' +
+    db_config['mysql_pwd'] + '@' +
+    db_config['mysql_host'] + ':' +
+    db_config['mysql_port'] + '/' +
+    db_config['mysql_db'])
 
 DB_Session = sessionmaker(bind=engine)
 session = DB_Session()

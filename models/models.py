@@ -8,7 +8,7 @@ class User(Base_Model):
     __tablename__ = 'users'
 
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
-    name = Column(String(20))
+    username = Column(String(20))
     fullname = Column(String(40))
     password = Column(String(40))
     type = Column(String(40))

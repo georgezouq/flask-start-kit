@@ -8,6 +8,7 @@ from flask_jwt_extended import (
 
 from models import User
 from extensions import pwd_context, jwt
+from common.db import session
 
 
 blueprint = Blueprint('auth', __name__, url_prefix='/auth')
@@ -23,8 +24,8 @@ def login():
     if not username or not password:
         return jsonify({"msg": "Missing username or password"}), 400
 
-    user = User.query.filter_by(username=username).first()
-    if user is None or not pwd_context.verify(password, user.password):
+    user = session.query(User).filter_by(username=username).first()
+    if user is None or not password == user.password:  # pwd_context.verify(password, user.password):
         return jsonify({"msg": "Bad credentials"}), 400
 
     access_token = create_access_token(identity=user.id)
