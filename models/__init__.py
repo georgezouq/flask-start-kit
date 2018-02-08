@@ -1,5 +1,5 @@
-from .models import User, Base_Model
+from .models import User, Order, db
 
 __all__ = [
-    'User', 'Base_Model'
+    'User', 'Order', db
 ]

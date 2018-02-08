@@ -3,6 +3,8 @@ from models import User
 from flask import request
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required
+from common.paginate import paginate
+
 
 class UserSchema(ma.ModelSchema):
     password = ma.String(load_only=True, required=True)
@@ -11,12 +13,13 @@ class UserSchema(ma.ModelSchema):
         model = User
         sqla_session = db.session
 
+
 class UserResource(Resource):
     method_dircorators = [jwt_required]
 
     def get(self, user_id):
         schema = UserSchema()
-        user = User.query.get_or_404(user_id)
+        user = User.query.filter_by({'id': user_id}).first()
         return {"user": schema.dump(user).data}
 
     def put(self, user_id):
@@ -34,6 +37,7 @@ class UserResource(Resource):
         db.session.commit()
 
         return {"msg": "user deleted"}
+
 
 class UserList(Resource):
     method_decorators = [jwt_required]

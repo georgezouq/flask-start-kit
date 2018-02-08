@@ -3,6 +3,7 @@ from flask_cors import CORS
 from resources import todo, user, auth
 from extensions import db, jwt
 from common.config import SECRET_KEY, SQLALCHEMY_TRACK_MODIFICATIONS, db_path
+import models
 
 def create_app():
     app = Flask(__name__)
@@ -19,6 +20,8 @@ def configure_extensions(app):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
     db.init_app(app)
     jwt.init_app(app)
+
+    db.create_all(app=app)
 
 
 def register_blueprints(app):

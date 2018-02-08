@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, Sequence
 from sqlalchemy.ext.declarative import declarative_base
+from extensions import db
+# Base_Model = declarative_base()
 
-Base_Model = declarative_base()
 
-
-class User(Base_Model):
+class User(db.Model):
     __tablename__ = 'users'
 
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
@@ -18,7 +18,7 @@ class User(Base_Model):
         return "<User (name='%s', fullname='%s', password='%s')>" % (self.name, self.fullname, self.password)
 
 
-class Order(Base_Model):
+class Order(db.Model):
     __tablename__ = 'order'
 
     id = Column(Integer, Sequence('order_id_seq'), primary_key=True)
@@ -28,3 +28,4 @@ class Order(Base_Model):
 
     def __repr__(self):
         return "<Order (user_id='%s', amount='%s', status='%s')>" % (self.user_id, self.amount, self.status)
+
