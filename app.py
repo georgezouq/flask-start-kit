@@ -5,6 +5,7 @@ from extensions import db, jwt
 from common.config import SECRET_KEY, SQLALCHEMY_TRACK_MODIFICATIONS, db_path
 import models
 
+
 def create_app():
     app = Flask(__name__)
     CORS(app)
