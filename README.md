@@ -29,5 +29,7 @@ Congratulations! Enjoy your journey!
 
 ### Other Resources
 
+By the way, this `vue.js` project [vue-admin](https://github.com/georgezouq/vue-admin) is build for this project's front end page.
+
 - [Flask](http://flask.pocoo.org/)
 - [Flask Restful](https://github.com/flask-restful/flask-restful)
